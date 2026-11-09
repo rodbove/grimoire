@@ -1,0 +1,171 @@
+:root {
+	--body: #9d9e99;
+	--body-hi: #a9aaa5;
+	--side: #6c6d69;
+	--edge: #7a7b76;
+	--ink: #1c1c1c;
+	--dim-ink: #454642;
+	--screen: #0d0e0f;
+	--screen-ink: #ecebe4;
+	--screen-dim: #8b8c8d;
+	--screen-mute: #4a4b4c;
+	--screen-faint: #222325;
+	--orange: #ff5b14;
+	--orange-dim: #7a2c0a;
+	--blue: #2f6bd8;
+	--green: #2fa35a;
+	--white: #f4f3ef;
+	--pad: #dddcd6;
+	--pad-hi: #e9e8e3;
+	--pad-shadow: #5e5f5b;
+	--lcd-off: #241510;
+	--key: #2a2a2a;
+	--key-hi: #333333;
+	--key-shadow: #0f0f0f;
+	--key-ink: #e6e4de;
+	--mono: 'JetBrains Mono', 'Cascadia Mono', 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+	--sans: 'Inter', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+	--r: 7px;
+	color-scheme: light;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	background: var(--side);
+	color: var(--ink);
+	font-family: var(--mono);
+	font-size: 14px;
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: transparent;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+	color: inherit;
+}
+
+a {
+	color: inherit;
+}
+
+.label {
+	font-size: 10px;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--dim-ink);
+}
+
+.screen {
+	background: var(--screen);
+	color: var(--screen-ink);
+	border-radius: 12px;
+	box-shadow:
+		inset 0 0 0 6px #050506,
+		inset 0 2px 14px rgba(0, 0, 0, 0.9),
+		0 1px 0 rgba(255, 255, 255, 0.25);
+	padding: 14px 18px;
+}
+
+.screen .label {
+	color: var(--screen-mute);
+}
+
+.field {
+	background: var(--screen);
+	color: var(--screen-ink);
+	border: 1px solid #000;
+	border-radius: 6px;
+	padding: 8px 10px;
+	outline: none;
+	width: 100%;
+	box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.screen .field {
+	background: var(--screen-faint);
+	border-color: #2c2d2f;
+}
+
+.field:focus {
+	border-color: var(--orange);
+}
+
+.field::placeholder {
+	color: var(--screen-mute);
+}
+
+textarea.field {
+	resize: vertical;
+	min-height: 72px;
+	line-height: 1.45;
+}
+
+select.field {
+	appearance: none;
+	background-image: linear-gradient(45deg, transparent 50%, var(--screen-dim) 50%), linear-gradient(135deg, var(--screen-dim) 50%, transparent 50%);
+	background-position:
+		calc(100% - 16px) 50%,
+		calc(100% - 11px) 50%;
+	background-size: 5px 5px;
+	background-repeat: no-repeat;
+	padding-right: 28px;
+}
+
+.orange {
+	color: var(--orange);
+}
+
+.dim {
+	color: var(--screen-dim);
+}
+
+.mute {
+	color: var(--screen-mute);
+}
+
+.row {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.wrap {
+	flex-wrap: wrap;
+}
+
+.grow {
+	flex: 1;
+	min-width: 0;
+}
+
+.ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+}
+
+::selection {
+	background: var(--orange);
+	color: #000;
+}
+
+:focus-visible {
+	outline: 2px solid var(--orange);
+	outline-offset: 2px;
+}
